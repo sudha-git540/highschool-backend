@@ -7,6 +7,12 @@ pipeline {
 
     }
 
+    environment {
+
+        DB_PASSWORD = credentials('db-password')
+
+    }
+
     stages {
 
         stage('Build') {
