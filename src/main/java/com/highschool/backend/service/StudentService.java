@@ -49,4 +49,14 @@ public class StudentService {
                         )
                 );
     }
+    public Student loginStudent(String studentId, String mobileNumber) {
+
+        return studentRepository
+                .findByStudentIdAndMobileNumber(studentId, mobileNumber)
+                .orElseThrow(() ->
+                        new IllegalArgumentException(
+                                "Invalid Student ID or mobile number"
+                        )
+                );
+    }
 }
