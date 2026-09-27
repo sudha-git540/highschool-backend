@@ -51,4 +51,12 @@ public class QuestionController {
                 questionService.getQuestionById(questionId)
         );
     }
+    @GetMapping("/class/{classNumber}")
+    public ResponseEntity<List<Question>> getQuestionsByClass(
+            @PathVariable Integer classNumber) {
+
+        return ResponseEntity.ok(
+                questionService.getQuestionsByClass(classNumber)
+        );
+    }
 }

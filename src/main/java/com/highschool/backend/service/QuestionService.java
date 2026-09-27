@@ -53,4 +53,8 @@ public class QuestionService {
                                 "Question not found: " + questionId
                         ));
     }
+    public List<Question> getQuestionsByClass(Integer classNumber) {
+        return questionRepository
+                .findByLessonClassSubjectSchoolClassClassNumber(classNumber);
+    }
 }
